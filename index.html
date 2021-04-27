@@ -1,12 +1,10 @@
 <html>
 	<head>
     <script type="text/javascript" src="crawler.js">
-
       /* Text and/or Image Crawler Script v1.53 (c)2009-2011 John Davenport Scheuer
          as first seen in http://www.dynamicdrive.com/forums/
          username: jscheuer1 - This Notice Must Remain for Legal Use
       */
-      
     </script>
 		<meta name="viewport" content="width=device-width, user-scalable=yes">
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -16,21 +14,11 @@
 	</head>
 
     <body>   
-      <a href="https://luisaburini.github.io/massu/">
-        <div class="span_arcade moca">
-          <div class="marquee brazil_arcade moca" id="mycrawler"> brazil arcade </div>
-        </div>
-      </a>
-
-      <a href="https://luisaburini.github.io/massu/">
-        <div class="lozenge peneira"></div>
-      </a>
-      
-    
-      <a href="https://luisaburini.github.io/massu/">
-        <div class="endless chainsaw"></div>
-      </a>
-        
+      <div class="span_arcade moca" onclick="hideAll()">
+        <div class="marquee brazil_arcade moca" id="mycrawler"> brazil arcade </div>
+      </div>
+      <div class="lozenge peneira" onclick="hideAll()"></div>
+      <div class="endless chainsaw" onclick="hideAll()"></div>
       <script src="actions.js"></script>
     </body>
 </html>
