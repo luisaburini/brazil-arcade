@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+@import url(https://fonts.googleapis.com/css?family=Cedarville+Cursive);
 
 body {
     background-color: green;
@@ -18,8 +20,9 @@ body {
     display: none;
     z-index: 9;
     position: absolute;
-    left: 10vw;
-    top: 20vh;
+    left: 8vw;
+    top: 10vh;
+    width: 45vw;
     animation: invertColors 1.5s infinite alternate;
 }
 
@@ -57,13 +60,42 @@ body {
 @keyframes rtt {
    from {
         filter: hue-rotate(90deg);
+        left: 10vw;
+        top: 48vh;
     }
     to {
         filter: hue-rotate(0deg);
+        left: 0px;
+        top: 58vh;
     }
 
   }
 
+  .insert_coin {
+      position: absolute;
+      display: none;
+      left: 60vw;
+      width: 20vw;
+      top: 50vh;
+  }
+
+  .to_buy_centrao {
+      position: absolute;
+      display: none;
+      left: 50vw;
+      top: 80vh;
+      width: 40vw;
+      text-align: center;
+      font-family: 'Minecraft';
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: black;
+  }
+
+  @font-face {
+    font-family: 'Minecraft';
+    src: url('fonts/Minecraft.ttf') format('truetype'); /* Legacy iOS */
+  }
 
 .chainsaw {
     cursor:url(./imgs/chainsaw.png), auto;
@@ -77,19 +109,18 @@ body {
     cursor: url(./imgs/moca.png), auto;
 }
 
-/* Animate neon flicker */
-@keyframes flicker {
+@keyframes flickerArcade {
     
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
       
         text-shadow:
             -0.2rem -0.2rem 1rem #fff,
             0.2rem 0.2rem 1rem #fff,
-            0 0 2rem var(--neon-text-color),
-            0 0 4rem var(--neon-text-color),
-            0 0 6rem var(--neon-text-color),
-            0 0 8rem var(--neon-text-color),
-            0 0 10rem var(--neon-text-color);
+            0 0 2rem var(--neon-arcade-color),
+            0 0 4rem var(--neon-arcade-color),
+            0 0 6rem var(--neon-arcade-color),
+            0 0 8rem var(--neon-arcade-color),
+            0 0 10rem var(--neon-arcade-color);
         
         box-shadow:
             0 0 .5rem #fff,
@@ -103,7 +134,35 @@ body {
     20%, 24%, 55% {        
         text-shadow: none;
         box-shadow: none;
-        filter: invert(1);
+    }    
+}
+
+/* Animate neon flicker */
+@keyframes flickerBrazil {
+    
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+        text-shadow:
+            -0.2rem -0.2rem 1rem #fff,
+            0.2rem 0.2rem 1rem #fff,
+            0 0 2rem var(--neon-brazil-color),
+            0 0 4rem var(--neon-brazil-color),
+            0 0 6rem var(--neon-brazil-color),
+            0 0 8rem var(--neon-brazil-color),
+            0 0 10rem var(--neon-brazil-color);
+        
+        box-shadow:
+            0 0 .5rem #fff,
+            inset 0 0 .5rem #fff,
+            0 0 2rem var(--neon-border-color),
+            inset 0 0 2rem var(--neon-border-color),
+            0 0 4rem var(--neon-border-color),
+            inset 0 0 4rem var(--neon-border-color);        
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+        box-shadow: none;
     }    
 }
 
@@ -112,34 +171,66 @@ body {
     font-size: 10px;   
     
     /* Set neon color */
-    --neon-text-color: #08f;
+    --neon-brazil-color: #f10dd3da;
+    --neon-arcade-color: rgb(0, 89, 255);
   }
 
-.brazil_arcade {
-    text-align: center;
-    font-size: 13rem;
-    font-weight: 500;
+.brazil {
+    font-size: 25rem;
     color: #fff;
+    width: 100%;
+    left: 0%;
+    text-align: center;
     padding: 4rem 6rem 5.5rem;
-    /* font-family: 'Exo 2', sans-serif; */
-    /* border: 0.4rem solid #fff;
-    border-radius: 2rem; */
-    text-transform: uppercase;
-    animation: flicker 1.5s infinite alternate;     
+
+    font-family: 'Cedarville Cursive';
+    animation: flickerBrazil 1.5s infinite alternate;     
     position: absolute;
   }
+
+.arcade {
+    font-size: 7rem;
+    font-weight: 500;
+    width: 50%;
+    top: 25vh;
+    left: 15%;
+    text-align: center;
+    color: #fff;
+    padding: 4rem 6rem 5.5rem;
+    /* Add the blur effect */
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    font-family: 'Exo 2', sans-serif;
+    text-transform: uppercase;
+    animation: flickerArcade 2.5s infinite alternate;     
+    position: absolute;
+}
   
-  .brazil_arcade::-moz-selection {
+  .brazil::-moz-selection {
     background-color: var(--neon-border-color);
     color: var(--neon-text-color);
   }
   
-  .brazil_arcade::selection {
+  .brazil::selection {
     background-color: var(--neon-border-color);
     color: var(--neon-text-color);
   }
   
-  .brazil_arcade:focus {
+  .brazil:focus {
+    outline: none;
+  }
+
+  .arcade::-moz-selection {
+    background-color: var(--neon-border-color);
+    color: var(--neon-text-color);
+  }
+  
+  .arcade::selection {
+    background-color: var(--neon-border-color);
+    color: var(--neon-text-color);
+  }
+  
+  .arcade:focus {
     outline: none;
   }
 
