@@ -19,10 +19,26 @@ var brazilArcade = document.getElementById('brazil_arcade');
 var endless = document.getElementById('endless');
 var lozenge = document.getElementById('lozenge');
 var spanArcade = document.getElementById('span_arcade');
+var maco1 = document.getElementById('maco1');
+var maco2 = document.getElementById('maco2');
+var maco3 = document.getElementById('maco3');
 
 function hideAll()
 {
 	brazilArcade.style.display = 'none';
 	lozenge.style.display = 'none';
 	spanArcade.style.display = 'none';
+}
+
+function showAll() 
+{
+	maco1.style.display = 'block';
+	maco2.style.display = 'block';
+	maco3.style.display = 'block';
+}
+
+function start()
+{
+	hideAll();
+	showAll();
 }

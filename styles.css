@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
 
+body {
+    background-color: green;
+    cursor:url(./imgs/chainsaw.png), auto;
+}
 
 .bg {
     top: 25%;
@@ -9,6 +13,57 @@
     position: absolute;
     background-color: green;
 }
+
+.maco1 {
+    display: none;
+    z-index: 9;
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+    animation: invertColors 1.5s infinite alternate;
+}
+
+@keyframes invertColors {
+    from {filter: invert(1);}
+    to {filter: invert(0);}
+  }
+
+.maco2 {
+    display: none;
+    position: absolute;
+    left: 11vw;
+    top: 25vh;
+    animation: invertZ 1s infinite alternate;
+}
+
+@keyframes invertZ {
+    0% {z-index: 20;filter: invert(0)}
+    25% {z-index: 0;}
+    50% {z-index: 20; filter: invert(1);}
+    65% {z-index: 0;}
+    90% {z-index: 20;filter: invert(0)}
+  }
+
+  .maco3 {
+    display: none;
+    z-index: 21;
+    position: absolute;
+    width: 10vw;
+    left: 10vw;
+    top: 50vh;
+    animation: rtt 5s infinite alternate;
+}
+
+@keyframes rtt {
+   from {
+        filter: hue-rotate(90deg);
+    }
+    to {
+        filter: hue-rotate(0deg);
+    }
+
+  }
+
 
 .chainsaw {
     cursor:url(./imgs/chainsaw.png), auto;
@@ -48,6 +103,7 @@
     20%, 24%, 55% {        
         text-shadow: none;
         box-shadow: none;
+        filter: invert(1);
     }    
 }
 
